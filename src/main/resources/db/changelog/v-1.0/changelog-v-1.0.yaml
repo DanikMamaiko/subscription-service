@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/v-1.0/changeset/01-changeset-user-table.yaml
+  - include:
+      file: db/changelog/v-1.0/changeset/02-changeset-subscription-table.yaml

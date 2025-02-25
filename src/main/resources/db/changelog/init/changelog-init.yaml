@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: init-changelog
+      author: danikmamaiko@gmail.com
+      changes:
+        - tagDatabase:
+            tag: init

@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  subscription-service-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: subscription-app
+    ports:
+      - "8181:8181"
+    restart: unless-stopped
+    depends_on:
+      - subscription-service-db
+    networks:
+      - subscription-service-network
+
+  subscription-service-db:
+    container_name: subscription-service-db
+    image: postgres:latest
+    volumes:
+      - subscription-service-volume:/var/lib/postgresql/data
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: subscription_service_database
+      POSTGRES_PORT: 5432
+    ports:
+      - "5432:5432"
+    networks:
+      - subscription-service-network
+
+volumes:
+  subscription-service-volume:
+
+networks:
+  subscription-service-network:
+    driver: bridge

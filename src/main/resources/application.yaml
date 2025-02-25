@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: sber-test-project
+  datasource:
+    url: jdbc:postgresql://subscription-service-db:5432/subscription_service_database
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  liquibase:
+    change-log: db/changelog/db.changelog-master.yaml
+    enabled: true
+
+server:
+  port: 8181
