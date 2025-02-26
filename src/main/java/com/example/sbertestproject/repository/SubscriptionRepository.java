@@ -10,6 +10,6 @@ import java.util.List;
 
 public interface SubscriptionRepository extends JpaRepository<Subscription, Long>,
         PagingAndSortingRepository<Subscription, Long> {
-    @Query("SELECT s.serviceName FROM Subscription s GROUP BY s.serviceName ORDER BY COUNT(s) DESC")
+    @Query("SELECT s.serviceName FROM Subscription s GROUP BY s.serviceName ORDER BY COUNT(s) DESC LIMIT 3")
     List<SubscriptionType> findTop3MostPopularSubscriptions();
 }

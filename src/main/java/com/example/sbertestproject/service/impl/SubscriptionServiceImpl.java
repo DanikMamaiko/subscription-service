@@ -59,7 +59,8 @@ public class SubscriptionServiceImpl implements SubscriptionService {
                 .filter(sub -> sub.getId().equals(subscriptionId))
                 .findFirst()
                 .orElseThrow(() -> new NoSuchElementException("Subscription not found"));
-        subscriptionRepository.delete(subscription);
+        user.getSubscriptions().remove(subscription);
+        userRepository.save(user);
         log.info("Subscription ID: {} successfully deleted for user ID: {}", subscriptionId, userId);
     }
 
