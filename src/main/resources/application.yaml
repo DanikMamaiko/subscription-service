@@ -2,7 +2,8 @@ spring:
   application:
     name: sber-test-project
   datasource:
-    url: jdbc:postgresql://subscription-service-db:5432/subscription_service_database
+#    url: jdbc:postgresql://subscription-service-db:5432/subscription_service_database
+    url: jdbc:postgresql://localhost:5432/subscription_service_database
     username: root
     password: root
     driver-class-name: org.postgresql.Driver

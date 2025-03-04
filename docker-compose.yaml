@@ -1,18 +1,18 @@
 version: '3.8'
 
 services:
-  subscription-service-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: subscription-app
-    ports:
-      - "8181:8181"
-    restart: unless-stopped
-    depends_on:
-      - subscription-service-db
-    networks:
-      - subscription-service-network
+#  subscription-service-app:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    container_name: subscription-app
+#    ports:
+#      - "8181:8181"
+#    restart: unless-stopped
+#    depends_on:
+#      - subscription-service-db
+#    networks:
+#      - subscription-service-network
 
   subscription-service-db:
     container_name: subscription-service-db
